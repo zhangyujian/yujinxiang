@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title><%= title %> - <%= config.name %></title>
+	<meta name="description" content="<%= config.description %>">
+	<meta name="keywords" content="<%= config.keywords %>">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="yujinxiang/img/favicon.ico" type="image/x-icon">
+    <meta name = "format-detection" content = "telephone=no" />
+    <link rel="stylesheet" href="yujinxiang/css/bootstrap.css" >
+    <link rel="stylesheet" href="yujinxiang/css/style.css">
+    <link rel="stylesheet" href="yujinxiang/css/camera.css">
+    
+	<script src="yujinxiang/js/jquery.js"></script>
+    <script src="yujinxiang/js/jquery-migrate-1.2.1.js"></script>
+    <script src="yujinxiang/js/superfish.js"></script>
+    <script src="yujinxiang/js/jquery.mobilemenu.js"></script>
+    <script src="yujinxiang/js/jquery.easing.1.3.js"></script>
+    <script src="yujinxiang/js/jquery.ui.totop.js"></script>
+    <script src="yujinxiang/js/jquery.touchSwipe.min.js"></script>
+    <script src="yujinxiang/js/jquery.equalheights.js"></script>
+    
+         
+    <script src='yujinxiang/js/camera.js'></script>
+    <!--[if (gt IE 9)|!(IE)]><!-->
+        <script src="yujinxiang/js/jquery.mobile.customized.min.js"></script>
+    <!--<![endif]-->
+    
+    <script>	
+        $(window).load( function(){	
+            
+        	   jQuery('.camera_wrap').camera();	 
+               
+        });
+    </script>
+    
+    
+    <!--[if lt IE 9]>
+    <div style='text-align:center'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="yujinxiang/http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div>  
+    <link rel="stylesheet" href="assets/tm/css/tm_docs.css" type="text/css" media="screen">
+    <script src="yujinxiang/assets/assets/js/html5shiv.js"></script> 
+    <script src="yujinxiang/assets/assets/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<!--==============================header=================================-->
+<header id="header">
+      <div class="container">
+        <h1 class="navbar-brand navbar-brand_"><a href="/"><img alt="Grill point" src="yujinxiang/img/logo.png"></a></h1>
+      </div>
+      <div class="menuheader">
+          <div class="container">
+            <nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
+                <ul class="nav sf-menu">
+					<li class="active"><a href="/">首页</a></li>
+					<li><a href="/movie">微电影</a></li>
+					<li><a href="/about">关于我们</a></li>
+					<li><a href="/product">案例展示</a></li>
+					<li><a href="/server">活动策划</a></li>
+					<li><a href="/server">服务报价</a></li>
+					<li><a href="/contact">联系我们</a></li>
+                </ul>
+            </nav>
+          </div>
+      </div>
+</header>

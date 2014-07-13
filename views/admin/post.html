@@ -1,0 +1,75 @@
+<%= include common/header.html %>
+<%= include common/nav.html %>
+<script src="/js/jquery.twbsPagination.js"></script>
+<script>
+$(function(){
+    var url = window.location.href.split("?page=");
+    var startPage = 1;
+    if(url.length != 1){
+        startPage = url[1];
+    }
+    var totalPages = <%= total/2 %>;
+    var totalPages = Math.ceil(totalPages);
+    
+    $('#pagination').twbsPagination({
+        totalPages: totalPages,
+        visiblePages: 7,
+        startPage:parseInt(startPage),
+        hrefVariable: 'number',
+        href: '?page=number',
+        first: "首页",
+        prev: "上一页",
+        next: "下一页",
+        last: "末页",
+        onPageClick: function (event, page) {
+            $("#pagination .page").each(function(){
+                $(this).removeClass("active");
+            });
+            $("#pagination .page:eq("+ (startPage-1) +")").addClass("active");
+        }
+    });
+});
+
+</script>
+<div class="container docs-container">
+	<div class="row">
+		<%= include common/side.html %>
+		<div class="col-md-10">
+			<div class="page-header docs-page-header">
+			  	<h2>文章管理</h2>
+			  	<a class="docs-page-header-add" href="/admin/newPost">添加新文章</a>
+			</div>
+			<% if( message != "" ){ %>
+		    <div class="alert alert-warning alert-dismissable">
+		        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		        <strong><%= message %></strong>
+		    </div>
+		    <% } %>
+			<table class="table table-bordered table-hover">
+				<tr class="active">
+					<th width="50"></th>
+					<th width="50">ID</th>
+					<th>特色图像</th>
+					<th>标题</th>
+					<th>发布时间</th>
+					<th width="50">操作</th>
+				</tr>
+				<% tables.forEach( function( table ){ %>
+				    <tr>
+				    	<td><input type="checkbox" /></td>
+				    	<td><%= table.id %></td>
+				    	<td><img width="50px" src="<%= table.feature %>" /></td>
+				    	<td><%= table.title %></td>
+				    	<td><%= table.date  %></td>
+				    	<td>
+				    		<a href="/admin/editpost/<%= table.id  %>" title="编辑"><span class="glyphicon glyphicon-edit"></span></a>
+				    		<a href="/admin/delpost/<%= table.id  %>" title="删除"><span class="glyphicon glyphicon-remove"></span></a>
+				    	</td>
+				    </tr>
+				<% }); %>
+			</table>
+			<ul id="pagination" class="pagination-sm"></ul>
+		</div>
+	</div>
+</div>
+<%= include common/footer.html %>
