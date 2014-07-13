@@ -1,5 +1,5 @@
 var mysql         = require('mysql')
-  , TEST_DATABASE = 'nodecms'
+  , TEST_DATABASE = 'yujinxiang'
   , md5           = require('./common').md5
   , session       = require('./common').session
   , connection    = require('./common').connection

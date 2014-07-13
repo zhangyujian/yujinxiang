@@ -1,5 +1,5 @@
 var mysql         = require('mysql')
-  , TEST_DATABASE = 'nodecms'
+  , TEST_DATABASE = 'yujinxiang'
   , md5           = require('./common').md5
   , session       = require('./common').session
   , bc            = require('buffer-concat');
@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
     host : 'localhost',
     port : 3306,
     user : 'root',
-    password : 'root',
+    password : 'qweqwe',
     database : TEST_DATABASE,
 });
 
