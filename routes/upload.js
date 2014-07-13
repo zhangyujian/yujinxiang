@@ -134,16 +134,19 @@ exports.upload = function (req, res) {
 //delete img
 exports.delimg = function(req, res){
     session(req, res, function(){
-        fs.unlink('./public/upload/img/'+req.params.name, function(err,data){
-            if(err){
-                console.error(err);
-                req.flash('message','删除失败');
-                res.redirect('/admin/upload');
-            }else{
-                req.flash('message','删除成功');
-                res.redirect('/admin/upload');
+        var sql = "DELETE FROM media WHERE id =?",
+            values = connection.escape(parseInt(req.params.id));
+        connection.query(sql, values, 
+            function selectCb(err, results) {
+                if (err) {
+                    console.log(err);
+                }
+                fs.unlink('./public/upload/img/'+req.params.id, function(err,data){
+                    req.flash('message','删除成功');
+                    res.redirect('/admin/upload');
+                });
             }
-        });
+        );
         
     });
 }
