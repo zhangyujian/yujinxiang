@@ -2,15 +2,8 @@ var mysql         = require('mysql')
   , TEST_DATABASE = 'yujinxiang'
   , md5           = require('./common').md5
   , session       = require('./common').session
+  , connection    = require('./common').connection
   , bc            = require('buffer-concat');
-
-
-var connection = mysql.createConnection({
-    host : 'localhost',
-	port : 3306,
-    user : 'root',
-    password : 'qweqwe',
-});
 
 exports.index = function(req, res){
 	connection.query('USE '+TEST_DATABASE);

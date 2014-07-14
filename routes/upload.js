@@ -1,22 +1,12 @@
 var mysql         = require('mysql')
-  , TEST_DATABASE = 'yujinxiang'
   , path          = require('path')
   , md5           = require('./common').md5
   , session       = require('./common').session
+  , connection    = require('./common').connection
   , fs            = require('fs')
   , config        = require('../config').config
   , bc            = require('buffer-concat')
   , multiparty    = require('multiparty');
-
-var connection = mysql.createConnection({
-    host : 'localhost',
-    port : 3306,
-    user : 'root',
-    password : 'qweqwe',
-    database : TEST_DATABASE,
-});
-
-connection.connect();
 
 // uploadify 
 exports.upload = function (req, res) {

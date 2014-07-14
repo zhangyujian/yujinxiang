@@ -1,21 +1,11 @@
 var mysql         = require('mysql')
-  , TEST_DATABASE = 'yujinxiang'
   , md5           = require('./common').md5
   , session       = require('./common').session
+  , connection    = require('./common').connection
   , bc            = require('buffer-concat')
   , fs            = require('fs')
   , format        = require('../libs/util').format
   , markdown      = require('markdown').markdown;
-
-var connection = mysql.createConnection({
-    host : 'localhost',
-    port : 3306,
-    user : 'root',
-    password : 'qweqwe',
-    database : TEST_DATABASE,
-});
-
-connection.connect();
 
 //article list
 exports.post = function(req, res){
