@@ -99,7 +99,7 @@ exports.upload = function (req, res) {
                     res.redirect('/admin/upload');
                 }else{
                     for (var i = 0; i < files.files.length; i++) {
-                        var oldname = files.files[i].path.split("\\upload\\img\\")[1];
+                        var oldname = files.files[i].path.split("public/upload/img/")[1];
                         var sql = "INSERT INTO media SET oldname=?",
                             values = [ oldname ];
                         connection.query(sql, values, 
