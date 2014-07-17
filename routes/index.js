@@ -1,14 +1,12 @@
 var mysql         = require('mysql')
-  , TEST_DATABASE = 'yujinxiang'
   , md5           = require('./common').md5
   , session       = require('./common').session
   , connection    = require('./common').connection
   , bc            = require('buffer-concat');
 
 exports.index = function(req, res){
-	connection.query('USE '+TEST_DATABASE);
 	connection.query(
-	  'SELECT * FROM user',
+	  'SELECT * FROM posts WHERE cid = 6 order by id desc limit 4',
 	  function selectCb(err, results, fields) {
 	    if (err) {
 	      throw err;
