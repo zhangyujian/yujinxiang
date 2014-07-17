@@ -63,7 +63,7 @@ CREATE TABLE `posts` (
   `type` varchar(20) DEFAULT 'post',
   `order` int(11) DEFAULT NULL,
   `cid` int(11) DEFAULT NULL,
-  `feature` char(1) DEFAULT NULL,
+  `feature` char(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
