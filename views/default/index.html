@@ -2,7 +2,11 @@
 
 <script>
     $(function(){
-
+        $(".index-zhuchi").each(function(){
+            $(this).hover(function(){
+                $("p",this).toggle();
+            });
+        });
     });
 </script>
 <!--div class="container index-a">
@@ -27,8 +31,8 @@
     <div class="row">
         <% tables.forEach( function( table ){ %>
         <div class="col-md-3">
-            <a href="">
-                <img class="img-rounded" src="yujinxiang/images/1.jpg" />
+            <a class="index-zhuchi" href="/detail/<%= table.id  %>">
+                <img class="img-rounded" src="<%= table.feature  %>" />
                 <p><%= table.title  %></p>
             </a>
         </div>
