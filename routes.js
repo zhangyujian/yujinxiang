@@ -16,6 +16,7 @@ module.exports = function(app){
 	app.get('/product', index.product);
 	app.get('/movie', index.movie);
 	app.get('/server', index.server);
+	app.get('/detail/:id', index.detail);
 	// Admin Routes
 	app.get('/admin', admin.index);
 		//user
@@ -46,7 +47,7 @@ module.exports = function(app){
 		//upload
 	app.get('/admin/upload',upload.upload);
 	app.post('/admin/upload',upload.upload);
-	app.get('/admin/delimg/:id',upload.delimg);
+	app.get('/admin/delimg/:name',upload.delimg);
 
 	//Admin Login Routes
 	app.get('/admin/login', admin.login);
