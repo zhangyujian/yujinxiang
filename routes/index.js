@@ -2,6 +2,7 @@ var mysql         = require('mysql')
   , md5           = require('./common').md5
   , session       = require('./common').session
   , connection    = require('./common').connection
+  , markdown      = require('markdown').markdown
   , bc            = require('buffer-concat');
 
 exports.index = function(req, res){
@@ -17,6 +18,23 @@ exports.index = function(req, res){
 	    });
 	  }
 	);
+};
+
+exports.detail = function(req, res){
+	var sql = "SELECT * FROM posts WHERE id =?",
+            values = connection.escape(parseInt(req.params.id));
+        connection.query(sql, values, 
+            function selectCb(err, results) {
+                if (err) {
+                    console.log(err);
+                }
+                results[0].content = markdown.toHTML(results[0].content);
+                res.render('default/detail', {
+                    title: "编辑分类",
+                    table: results[0]
+                });
+            }
+        );
 };
 
 exports.contact = function(req, res){
