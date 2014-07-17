@@ -12,11 +12,16 @@ body{ background: #100613; }
 .index-a .img-thumbnail{ background: #000; border: solid 1px #8004ba; }
 
 .index-b{ height: 200px; }
-.index-b a img{ border: 4px #00000a solid; }
-.index-b a:hover img{ border: 4px #2f011e solid; }
 .index-b h2{ color: #d3b6a8; }
 .index-b h2 small{ color: #3a172d; }
 
+.index-zhuchi{ display: block; width: 100%; position: relative; height: 180px; }
+.index-zhuchi p{ display: none; position: absolute; bottom: 0; left: 0; width: 100%; height: 30px; line-height: 30px; text-align: center; margin: 0; padding: 0;
+ color: #000; background: #c2a8c3;
+ filter:alpha(opacity=70);  
+-moz-opacity:0.7;  
+-khtml-opacity: 0.7;  
+opacity: 0.7;  }
 .colum{ background: #10000a; }
 
 
