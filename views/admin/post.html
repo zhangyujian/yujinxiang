@@ -8,7 +8,7 @@ $(function(){
     if(url.length != 1){
         startPage = url[1];
     }
-    var totalPages = <%= total/2 %>;
+    var totalPages = <%= total/10 %>;
     var totalPages = Math.ceil(totalPages);
     
     $('#pagination').twbsPagination({

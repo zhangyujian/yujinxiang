@@ -33,7 +33,7 @@ exports.post = function(req, res){
         );
 
         connection.query(
-            'SELECT * FROM posts order by id desc limit '+ (parseInt(2*page) - 2) +',2',
+            'SELECT * FROM posts order by id desc limit '+ (parseInt(10*page) - 10) +',10',
             function selectCb(err, results, fields) {
                 if (err) {
                     throw err;
