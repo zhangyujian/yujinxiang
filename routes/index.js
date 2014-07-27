@@ -82,7 +82,7 @@ exports.hotel = function(req, res){
                 }
                 res.render('default/hotel', {
 					title: "合作酒店",
-					table: results
+					tables: results
 				});
             }
         );
