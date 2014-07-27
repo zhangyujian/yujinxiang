@@ -56,9 +56,37 @@ exports.product = function(req, res){
 };
 
 exports.server = function(req, res){
-	res.render('default/server', {
-		title: "服务报价"
-	});
+	var sql = "SELECT * FROM posts WHERE cid =?",
+            values = 7;
+        connection.query(sql, values, 
+            function selectCb(err, results) {
+                if (err) {
+                    console.log(err);
+                }
+                res.render('default/server', {
+					title: "服务报价",
+					tables: results
+				});
+            }
+        );
+	
+};
+
+exports.hotel = function(req, res){
+	var sql = "SELECT * FROM posts WHERE cid =？",
+            values = 8;
+        connection.query(sql, values, 
+            function selectCb(err, results) {
+                if (err) {
+                    console.log(err);
+                }
+                res.render('default/hotel', {
+					title: "合作酒店",
+					table: results
+				});
+            }
+        );
+	
 };
 
 exports.movie = function(req, res){

@@ -16,6 +16,7 @@ module.exports = function(app){
 	app.get('/product', index.product);
 	app.get('/movie', index.movie);
 	app.get('/server', index.server);
+	app.get('/hotel', index.hotel);
 	app.get('/detail/:id', index.detail);
 	// Admin Routes
 	app.get('/admin', admin.index);

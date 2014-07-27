@@ -50,18 +50,16 @@
         </div>
         <div class="col-md-9">
             <div class="side-main">
-                <h1>新闻</h1>
+                <h1><%= title  %></h1>
                 <ul class="side-main-list">
+                    <% tables.forEach( function( table ){ %>
                     <li>
-                        <a href="##"><span class="glyphicon glyphicon-record"></span>北京婚庆公司带准新人们挑既实用</a>
+                        <a href="/detail/<%= table.id  %>"><span class="glyphicon glyphicon-record"></span><%= table.title  %></a>
                         <span class="time">2014-06-06</span>
                     </li>
-                    <li>
-                        <a href="##"><span class="glyphicon glyphicon-record"></span>北京婚庆公司带准新人们挑既实用</a>
-                        <span class="time">2014-06-06</span>
-                    </li>
+                    <% }); %>
                 </ul>
-                <div class="row">
+                <!--div class="row">
                     <div class="col-md-6">
                         <div class="media">
                             <a class="pull-left" href="#">
@@ -84,7 +82,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div-->
             </div>
         </div>
     </div>

@@ -50,15 +50,14 @@
         </div>
         <div class="col-md-9">
             <div class="side-main">
-                <h1>微电影</h1>
+                <h1><%= title  %></h1>
                 <div class="row">
+                    <% tables.forEach( function( table ){ %>
                     <div class="col-md-6">
-                        <a href="##"><img class="img-responsive" src="images/2.jpg" alt=""></a>
-                        <h6>精华花艺</h6>
+                        <a href="/detail/<%= table.id  %>"><img class="img-responsive" src="images/2.jpg" alt=""></a>
+                        <h6><%= table.title  %></h6>
                     </div>
-                    <div class="col-md-6">
-                        <a href="##"><img class="img-responsive" src="images/2.jpg" alt=""></a>
-                    </div>
+                    <% }); %>
                 </div>
             </div>
         </div>
