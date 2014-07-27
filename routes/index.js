@@ -73,7 +73,7 @@ exports.server = function(req, res){
 };
 
 exports.hotel = function(req, res){
-	var sql = "SELECT * FROM posts WHERE cid =？",
+	var sql = "SELECT * FROM posts WHERE cid =?",
             values = 8;
         connection.query(sql, values, 
             function selectCb(err, results) {
